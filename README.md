@@ -183,6 +183,11 @@ console.log(JSON.stringify(report, null, 2));
 
 - Node.js >= 14
 
+## TypeScript and IntelliSense
+
+This package ships generated declaration files in `dist/types`, so VS Code can provide
+autocomplete, method signatures, and inline type help when importing from `amazon-creator-api-sdk`.
+
 ## Development
 
 ```bash
@@ -205,14 +210,6 @@ Example:
 ```text
 feat: add getBrowseNodes pagination helper
 fix: correct x-marketplace header serialization
-```
-
-## Publishing Manually (Optional)
-
-```bash
-npm run build
-npm pack --dry-run
-npm publish --access public
 ```
 
 Manual publish is optional because release workflow handles publishing on master pushes.

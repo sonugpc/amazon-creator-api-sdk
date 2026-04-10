@@ -17,20 +17,20 @@ const {
   GetItemsRequestContent,
   SearchItemsRequestContent,
   GetBrowseNodesRequestContent,
-  GetVariationsRequestContent
-} = require('amazon-creator-api-sdk');
+  GetVariationsRequestContent,
+} = require("amazon-creator-api-sdk");
 ```
 
 If your runtime does not support package exports cleanly, import from the built entry:
 
 ```js
-const sdk = require('amazon-creator-api-sdk/dist/index.js');
+const sdk = require("amazon-creator-api-sdk/dist/index.js");
 ```
 
 ## Initialize Client
 
 ```js
-const { ApiClient, DefaultApi } = require('amazon-creator-api-sdk');
+const { ApiClient, DefaultApi } = require("amazon-creator-api-sdk");
 
 const apiClient = new ApiClient();
 apiClient.credentialId = process.env.CREATORS_CREDENTIAL_ID;
@@ -46,11 +46,11 @@ const api = new DefaultApi(apiClient);
 const {
   ApiClient,
   DefaultApi,
-  GetItemsRequestContent
-} = require('amazon-creator-api-sdk');
+  GetItemsRequestContent,
+} = require("amazon-creator-api-sdk");
 
 async function runGetItems() {
-  const marketplace = 'www.amazon.com';
+  const marketplace = "www.amazon.com";
 
   const client = new ApiClient();
   client.credentialId = process.env.CREATORS_CREDENTIAL_ID;
@@ -61,11 +61,11 @@ async function runGetItems() {
 
   const request = new GetItemsRequestContent();
   request.partnerTag = process.env.CREATORS_PARTNER_TAG;
-  request.itemIds = ['B0DLFMFBJW'];
+  request.itemIds = ["B0DLFMFBJW"];
   request.resources = [
-    'images.primary.medium',
-    'itemInfo.title',
-    'offersV2.listings.price'
+    "images.primary.medium",
+    "itemInfo.title",
+    "offersV2.listings.price",
   ];
 
   const response = await api.getItems(marketplace, request);
@@ -73,7 +73,7 @@ async function runGetItems() {
 }
 
 runGetItems().catch((error) => {
-  console.error('GetItems failed:', error.message);
+  console.error("GetItems failed:", error.message);
   process.exitCode = 1;
 });
 ```
@@ -84,11 +84,11 @@ runGetItems().catch((error) => {
 const {
   ApiClient,
   DefaultApi,
-  SearchItemsRequestContent
-} = require('amazon-creator-api-sdk');
+  SearchItemsRequestContent,
+} = require("amazon-creator-api-sdk");
 
 async function runSearchItems() {
-  const marketplace = 'www.amazon.com';
+  const marketplace = "www.amazon.com";
 
   const client = new ApiClient();
   client.credentialId = process.env.CREATORS_CREDENTIAL_ID;
@@ -99,24 +99,24 @@ async function runSearchItems() {
 
   const request = new SearchItemsRequestContent();
   request.partnerTag = process.env.CREATORS_PARTNER_TAG;
-  request.keywords = 'Harry Potter';
-  request.searchIndex = 'Books';
+  request.keywords = "Harry Potter";
+  request.searchIndex = "Books";
   request.itemCount = 2;
   request.resources = [
-    'images.primary.medium',
-    'itemInfo.title',
-    'offersV2.listings.price'
+    "images.primary.medium",
+    "itemInfo.title",
+    "offersV2.listings.price",
   ];
 
   const response = await api.searchItems(marketplace, {
-    searchItemsRequestContent: request
+    searchItemsRequestContent: request,
   });
 
   console.log(JSON.stringify(response, null, 2));
 }
 
 runSearchItems().catch((error) => {
-  console.error('SearchItems failed:', error.message);
+  console.error("SearchItems failed:", error.message);
   process.exitCode = 1;
 });
 ```

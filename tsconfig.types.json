@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist/types",
+    "module": "commonjs",
+    "target": "es2019",
+    "moduleResolution": "node",
+    "strict": false,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.js"],
+  "exclude": ["dist", "node_modules", "test"]
+}
