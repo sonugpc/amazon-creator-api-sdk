@@ -1,0 +1,66 @@
+{
+  "name": "amazon-creator-api-sdk",
+  "version": "1.2.0",
+  "description": "Node.js SDK for Amazon Creator API, the successor to Product Advertising API",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonugpc/amazon-creator-api-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sonugpc/amazon-creator-api-sdk/issues"
+  },
+  "homepage": "https://github.com/sonugpc/amazon-creator-api-sdk#readme",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "USAGE.md",
+    "CHANGELOG.md",
+    "LICENSE.txt",
+    "NOTICE.txt"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "amazon",
+    "creators-api",
+    "product-advertising-api",
+    "sdk",
+    "affiliate",
+    "ecommerce"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && babel src --out-dir dist --extensions .js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node test/smoke.test.js",
+    "release": "semantic-release"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "^10.2.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.6",
+    "@semantic-release/npm": "^12.0.2",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "semantic-release": "^24.2.9"
+  }
+}
