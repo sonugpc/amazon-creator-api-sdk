@@ -181,7 +181,7 @@ console.log(JSON.stringify(report, null, 2));
 
 ## Supported Runtime
 
-- Node.js >= 14
+- Node.js >= 18
 
 ## TypeScript and IntelliSense
 
